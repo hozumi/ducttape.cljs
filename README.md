@@ -163,8 +163,39 @@ The event handlers are defined as following:
   ...)
 ```
 
-Note that the argument is passed as a hashmap and it contains optinal argument mentioned above and original event as `e`.
+Note that the argument is passed as a hashmap and it contains optional argument mentioned above and original event as `e`.
 I recommend this optional argument style in not only event handlers but almost everywhere in your application.
+
+
+
+Next, let's look at an example of function which get data from the server.
+
+```clojure
+(ns myapp
+  (:require [simple-xhr :as sxhr]
+            [ducttape :as dt]
+            [crate-bind.core :as crateb]))
+```
+
+We use here [simple-xhr](https://github.com/hozumi/simple-xhr) for ajax call, but you can use your choice.
+
+```clojure
+(defn message-fetch [{:keys [id]}]
+  (sxhr/request
+    :url (str "/api/messages/" id)
+    :method "GET"
+    :complete
+    (fn [xhrio]
+      (when (.isSuccess xhrio)
+        (let [content (-> xhrio .getResponseJson
+                          (js->clj :keywordize-keys true))]
+          (swap! data assoc-in [:messages id] content)
+          (message-view-init {:message content}))))))
+```
+
+In the above callback, we put the data into the data shelf, and invoke corresponding view function to update ui.
+Although the callback will be more complex when we fetch a collection of something, but basic procedure is the same.
+
 
 ### No event system
 Ducttape.cljs doesn't provide additional event system intentionally.
