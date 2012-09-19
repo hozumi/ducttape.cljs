@@ -67,7 +67,9 @@ Typical dom shelf will contain following dom mappings.
 A key point is that doms are grouped by logical model.
 Although Ducttape.cljs doesn't force you to use any specific DOM manipulation library, I recommend [my modified version of crate](https://github.com/hozumi/crate-bind) for DOM creation because it can make a hashmap like the above easily.
 
-Let's look at a example of dom creation function.
+### function
+
+Let's look at an example of dom creation function.
 
 ```clojure
 (ns myapp
@@ -89,13 +91,14 @@ Let's look at a example of dom creation function.
           [:div.message-body :body-el body]])]
     (dt/delegate el [["mouseenter .message-body" message-view-popup {:dom binds}]
                      ["click .message-edit" message-view-edit-toggle {:dom binds}]])
+    (.appendTo (js/$ el) "#wrapper")
     (swap! doms assoc-in [:message-view id] binds)))
 ```
 
 The name of a function is `message-view-init`.
 I recommend this **kind**-*view*-**action** style name convention, in order to grasp what target kind is at a glance.
 The argument `message` is data retrieved from the server.
-The crateb/build do both create a set of dom elements and bind specific elements into a hashmap. So the `binds` will be following:
+The `crate-bind/build` do both create a set of dom elements and bind specific elements into a hashmap. So the `binds` will be following:
 
 ```clojure
 {:el #<[object HTMLLIElement]>,
@@ -132,7 +135,7 @@ When a set of dom elements is singleton in your application, you can use `assoc`
     (swap! doms assoc :signin-view binds)))
 ```
 
-The ducttape/delegate is a key function of Ducttape.cljs.
+The `ducttape/delegate` is a key function of Ducttape.cljs.
 
 ```clojure
 (dt/delegate el [["mouseenter .message-body" message-view-popup {:dom binds}]
@@ -148,7 +151,7 @@ All the event handlers which target this set of DOMs are bound to the root eleme
 First argument `el` is the root element, and second argument is actual bind settings.<br>
 First element of the each vectors follows "**event-name** **selector**" form. The selector is jQuery selector.<br>
 Second element is an event handler you want to bind, and third element is optional argument which is passed to the bound function.
-This optinal argument is very important for the event handler to identify who fires an event if it contains an id of corresponding data.
+This optional argument is very important for the event handler to identify who fires an event if it contains an id of corresponding data.
 
 The event handlers are defined as following:
 
