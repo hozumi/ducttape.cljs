@@ -94,8 +94,8 @@ Let's look a function of dom creation.
 
 The name of a function is `message-view-init`.
 I recommend this **kind**-*view*-**action** style name convention, in order to grasp what target kind is at a glance.
-The argument `message` is data from retrieved from the server.
-The crateb/elem do both create a set of dom and bind specific elements in a hashmap. So the `binds` looks like following:
+The argument `message` is data retrieved from the server.
+The crateb/build do both create a set of dom elements and bind specific elements in a hashmap. So the `binds` will be following:
 
 ```clojure
 {:el #<[object HTMLLIElement]>,
@@ -112,8 +112,8 @@ Then you can put the `binds` into the dom shelf directly.
 (swap! doms assoc-in [:message-view id] binds)
 ```
 
-We use `assoc-in` here because :message-view is a collection of set of dom.
-When a set of dom is singleton in your application, you can use `assoc` instead of `assoc-in` as following.
+We use `assoc-in` here because :message-view is a collection of set of dom elements.
+When a set of dom elements is singleton in your application, you can use `assoc` instead of `assoc-in` as following.
 
 ```clojure
 (defn signin-view-init []
@@ -145,12 +145,12 @@ The ducttape/delegate is a key function of Ducttape.cljs.
 ```
 
 All the event handlers which target this set of DOMs are bound to the root element in the same way as Backbone.js does.
-First argument `el` is the root element, and second argument is actual bind settings.
-First element of the each vectors follows "**event-name** **selector**" form. The selector is jQuery selector.
+First argument `el` is the root element, and second argument is actual bind settings.<br>
+First element of the each vectors follows "**event-name** **selector**" form. The selector is jQuery selector.<br>
 Second element is an event handler you want to bind, and third element is optional argument which is passed to the bound function.
 This optinal argument is very important for the event handler to identify who fires an event if it contains an id of corresponding data.
 
-The event handler is defined as following:
+The event handlers are defined as following:
 
 ```clojure
 (defn message-view-popup [{:keys [dom e]}]
