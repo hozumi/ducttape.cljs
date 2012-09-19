@@ -170,7 +170,7 @@ The event handlers are defined as following:
   ...)
 ```
 
-Note that the argument is passed as a hashmap and it contains optional argument mentioned above and original event as `e`.
+Note that the argument is passed as a hashmap and it contains optional argument mentioned above and original dom event as `e`.
 I recommend this optional argument style in not only event handlers but almost everywhere in your application.
 
 
