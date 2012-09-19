@@ -8,8 +8,9 @@ Currently Ducttape.cljs depends on jQuery.
 * Clear structure
 * Super thin
 * No original event system
-* Use normal functions and atoms as a building block
+* Use normal functions and atoms as building blocks
 * Don't force to use specific library
+
 
 <img src="https://github.com/downloads/hozumi/ducttape.cljs/ducttape_arch.png" alt="ducttape.cljs architecture" title="ducttape.cljs architecture" align="center" />
 
