@@ -9,7 +9,7 @@ Currently Ducttape.cljs depends on jQuery.
 ### Data Shelf
 Data shelf is model minus behavior, i.e. data holder.
 An important point is that data shelf contains only a copy of data in the server.
-This means that data shelf doesn't contain uncertain data which doesn't exist in the server.
+This means that data shelf doesn't contain uncertain data, which doesn't exist in the server.
 
 You need to prepare a data shelf as following.
 
