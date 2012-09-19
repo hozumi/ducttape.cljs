@@ -4,6 +4,13 @@ Ducttape.cljs is a ClojureScript micro MVC framework and suggests a clear skelet
 As substantial code is so tiny, Ducttape.cljs may be more like convention, agreement or my best practice than a framework.
 Currently Ducttape.cljs depends on jQuery.
 
+## Benefits
+* Clear structure
+* Super thin
+* No original event system
+* Use normal functions and atoms as a building block
+* Don't force to use specific library
+
 <img src="https://github.com/downloads/hozumi/ducttape.cljs/ducttape_arch.png" alt="ducttape.cljs architecture" title="ducttape.cljs architecture" align="center" />
 
 ### Data Shelf
