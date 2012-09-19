@@ -9,7 +9,7 @@ Currently Ducttape.cljs depends on jQuery.
 ### Data Shelf
 Data shelf is model minus behavior, i.e. data holder.
 An important point is that data shelf contains only a copy of data in the server.
-This means there is no data which doesn't exist in the server.
+This means that data shelf doesn't contain uncertain data which doesn't exist in the server.
 
 You need to prepare a data shelf as following.
 
@@ -67,7 +67,7 @@ Typical dom shelf will contain following dom mappings.
 A key point is that doms are grouped by logical model.
 Although Ducttape.cljs doesn't force you to use any specific DOM manipulation library, I recommend [my modified version of crate](https://github.com/hozumi/crate-bind) for DOM creation because it can make a hashmap like the above easily.
 
-Let's look at a function of dom creation.
+Let's look at a example of dom creation function.
 
 ```clojure
 (ns myapp
