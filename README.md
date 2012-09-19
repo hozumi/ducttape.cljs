@@ -67,7 +67,7 @@ Typical dom shelf will contain following dom mappings.
 A key point is that doms are grouped by logical model.
 Although Ducttape.cljs doesn't force you to use any specific DOM manipulation library, I recommend [my modified version of crate](https://github.com/hozumi/crate-bind) for DOM creation because it can make a hashmap like the above easily.
 
-Let's look a function of dom creation.
+Let's look at a function of dom creation.
 
 ```clojure
 (ns myapp
@@ -95,7 +95,7 @@ Let's look a function of dom creation.
 The name of a function is `message-view-init`.
 I recommend this **kind**-*view*-**action** style name convention, in order to grasp what target kind is at a glance.
 The argument `message` is data retrieved from the server.
-The crateb/build do both create a set of dom elements and bind specific elements in a hashmap. So the `binds` will be following:
+The crateb/build do both create a set of dom elements and bind specific elements into a hashmap. So the `binds` will be following:
 
 ```clojure
 {:el #<[object HTMLLIElement]>,
