@@ -8,7 +8,7 @@ Currently Ducttape.cljs depends on jQuery.
 * Clear structure
 * Super thin
 * No original event system
-* Use normal functions and atoms as building blocks
+* Use functions and atoms as building blocks
 * Don't force to use specific library
 
 
