@@ -69,7 +69,7 @@ Although Ducttape.cljs doesn't force you to use any specific DOM manipulation li
 
 ### function
 
-Let's look at an example of dom creation function.
+Let's look at an example of dom creating function.
 
 ```clojure
 (ns myapp
@@ -96,7 +96,7 @@ Let's look at an example of dom creation function.
 ```
 
 The name of a function is `message-view-init`.
-I recommend this **kind**-*view*-**action** style name convention, in order to grasp what target kind is at a glance.
+I recommend this **kind**-*view*-**action** style name convention, in order to grasp what a target kind is at a glance.
 The argument `message` is data retrieved from the server.
 The `crate-bind/build` do both create a set of dom elements and bind specific elements into a hashmap. So the `binds` will be following:
 
@@ -168,7 +168,7 @@ I recommend this optional argument style in not only event handlers but almost e
 
 
 
-Next, let's look at an example of function which get data from the server.
+Next, let's look at an example of data fetching function.
 
 ```clojure
 (ns myapp
