@@ -172,7 +172,7 @@ The event handlers are defined as following:
 ```
 
 Note that the argument is passed as a hashmap and it contains optional argument mentioned above and original dom event as `e`.
-I recommend this optional argument style in not only event handlers but almost everywhere in your application.
+I recommend this hashmap argument style in not only event handlers but almost everywhere in your application.
 
 
 
@@ -206,7 +206,7 @@ Although the callback will be more complex when we fetch a collection of somethi
 
 
 ### No event system
-Ducttape.cljs doesn't provide additional event system intentionally.
+Ducttape.cljs intentionally doesn't provide additional event system.
 What event system do is intelligent fucntion invocation.
 Without event system, instead of firing events you need to invoke functions that update views manually after updating corresponding models, but in Ducttape.cljs updating data in the data shelf can happen within only a few (1 or maybe 2 per kind) callbacks of server request.
 So manual invocation is not so painful compared with managing event.
