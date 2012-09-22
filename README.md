@@ -202,13 +202,13 @@ We use here [simple-xhr](https://github.com/hozumi/simple-xhr) for ajax call, bu
 ```
 
 In the above callback, we put the data into the data shelf, and invoke corresponding view function to update ui.
-Although the callback will be more complex when we fetch a collection of something, but basic procedure is the same.
+Although the callback will be more complex when we fetch a collection of something, basic procedure is the same.
 
 
 ### No event system
 Ducttape.cljs intentionally doesn't provide additional event system.
 What event system do is intelligent fucntion invocation at the cost of complexity and overhead.
-Without event system, instead of firing events you need to invoke functions that update views manually after updating corresponding models, but in Ducttape.cljs updating data in the data shelf can happen within only a few (1 or maybe 2 per kind) callbacks of server request.
+Without event system, instead of firing events you need to manually invoke functions that update views after updating corresponding models, but in Ducttape.cljs updating data in the data shelf can happen within only a few (1 or maybe 2 per kind) callbacks of server request.
 So manual invocation is not so painful compared with managing event.
 If you really want event system, no ploblem. Put atoms into the data shelf instead of regular hashmaps, in order to `watch` all the changes of the atoms.
 
