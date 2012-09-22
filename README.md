@@ -25,7 +25,7 @@ You need to prepare a data shelf as following.
 (def data (atom {}))
 ```
 
-We will put all the data retrieved from the server into this atom, but you can use multiple atoms in order to group data by kind if you want.
+We will put all the data retrieved from the server into this atom.
 Typical data shelf will contain following nested hashmap.
 
 ```clojure
@@ -40,7 +40,7 @@ Typical data shelf will contain following nested hashmap.
  {:userid "adam" :lang "en"}}
 ```
 
-You can arrange above structure as you need.
+You can freely arrange above structure or use multiple atoms in order to group data by kind if you prefer.
 
 ### DOM Shelf
 DOM shelf is view minus behavior, i.e. dom holder.
