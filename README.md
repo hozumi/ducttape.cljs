@@ -12,7 +12,7 @@ Currently Ducttape.cljs depends on jQuery.
 * Don't force to use specific library
 
 
-![alt tag](https://github.com/downloads/hozumi/ducttape.cljs/ducttape_arch.png)
+![alt ducttape architecture](https://cloud.githubusercontent.com/assets/410572/5325724/ae56e908-7d37-11e4-91db-a0f8a78beff7.png)
 
 ### Data Shelf
 Data shelf is model minus behavior, i.e. data holder.
